@@ -1,8 +1,10 @@
 (function() {
-    function HomeCtrl() {
-    }
+    function HomeCtrl(Task, $scope) {
+        this.tasks = Task.all;
+        this.taskManager = Task;
+    };
 
     angular
         .module('blocitofffe')
-        .controller('HomeCtrl', [HomeCtrl]);
+        .controller('HomeCtrl', ['Task', '$scope', HomeCtrl]);
 })();

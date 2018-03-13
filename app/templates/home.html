@@ -1,1 +1,25 @@
- <h1>Home Page</h1>
+<div class='home-window'>
+    <div class='task-type'>
+        <h2>Create New Task</h2>
+
+        <div class='new-task'>
+                <input type='text' class='new-task-field' ng-model='taskDescription' placeholder="Enter task description">
+                <div class='priority-selector'>
+                    <select ng-model='taskPriority' >
+                        <option value="" disabled="disabled" selected="selected">Select Priority Level</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low" >Low</option>
+                    </select>
+                </div>
+                <button class='add-task-button' ng-click='home.taskManager.addTask(taskDescription, taskPriority); clearfunction(this)'>Add Task</button>
+        </div>
+
+    </div>
+
+    <div class='task-list'>
+        <div ng-repeat='task in home.tasks' ng-class="'activeTask'">
+            <span style="font-size:30px;">{{ task.description }}</span> <button class='task-completed-button'>Mark As Completed</button><br> Priority: {{ task.priority }}
+        </div>
+    </div>
+</div>
