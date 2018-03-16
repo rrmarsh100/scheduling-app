@@ -98,10 +98,19 @@ select {
     float: right;
     margin-left: 20px;
     background-color: rgb(255, 255, 255);
-    height: 70px;
+    height: 85px;
     width: 100px;
     border-style: none;
 }
+
+.animate-show-hide.ng-hide {
+    opacity: 0;
+  }
+
+  .animate-show-hide.ng-hide-add,
+  .animate-show-hide.ng-hide-remove {
+    transition: all linear 0.5s;
+  }
 
 .task-completed-button:hover {
     float: right;
@@ -109,7 +118,7 @@ select {
     background-color: rgba(45,45,45,1);
     font-weight: bold;
     color: rgb(255, 255, 255);
-    height: 70px;
+    height: 85px;
     width: 100px;
     border-style: none;
 }
@@ -125,16 +134,27 @@ select {
     background-color: rgb(255, 255, 255);
     margin-top: 10px;
     padding-left: 20px;
-    height: 70px;
+    height: 85px;
     width: 100%;
 }
 
-.historyTask {
-    float: left;
-    color: rgba(45,45,45,1);
+.expiredTask {
+    position: relative;
+    color: rgb(134, 73, 73);
     background-color: rgb(255, 255, 255);
     margin-top: 10px;
     padding-left: 20px;
-    height: 50px;
-    width: 85%;
+    height: 85px;
+    width: 100%;
+}
+
+.completedTask {
+    position: relative;
+    color: rgb(119, 167, 115);
+    background-color: rgb(255, 255, 255);
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+    height: 85px;
+    width: 100%;
 }

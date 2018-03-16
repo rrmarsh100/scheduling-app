@@ -18,8 +18,8 @@
     </div>
 
     <div class='task-list'>
-        <div ng-repeat='task in home.tasks' ng-class="'activeTask'">
-            <span style="font-size:30px;">{{ task.description }}</span> <button class='task-completed-button'>Mark As Completed</button><br> Priority: {{ task.priority }}
+        <div ng-class="'activeTask'" ng-repeat='task in home.tasks' ng-if="home.activeTask(task)">
+            <span style="font-size:30px;">{{ task.description }}</span> <button class='task-completed-button' ng-click="home.taskCompleted(task)" >Mark As Completed</button><br> Priority: {{ task.priority }} <br> Expires: {{ task.expires }}
         </div>
     </div>
 </div>
