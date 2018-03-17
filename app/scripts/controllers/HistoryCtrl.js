@@ -8,7 +8,7 @@
             return task.completed == true;
         };
         this.expiredTask = function(task) {
-            var expiryDate = moment().subtract(7, 'days').format('MMM Do YY');
+            var expiryDate = moment().subtract(7, 'days').format('L');
             return task.created > expiryDate;
         };
     };

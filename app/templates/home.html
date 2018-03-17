@@ -6,7 +6,7 @@
                 <input type='text' class='new-task-field' ng-model='taskDescription' placeholder="Enter task description">
                 <div class='priority-selector'>
                     <select ng-model='taskPriority' >
-                        <option value="" disabled="disabled" selected="selected">Select Priority Level</option>
+                        <option value="" disabled="disabled" selected="selected">Select Priority</option>
                         <option value="High">High</option>
                         <option value="Medium">Medium</option>
                         <option value="Low" >Low</option>
@@ -19,7 +19,7 @@
 
     <div class='task-list'>
         <div ng-class="'activeTask'" ng-repeat="task in home.tasks | orderBy: ['priority', 'created']" ng-if="home.activeTask(task)">
-            <span style="font-size:30px;">{{ task.description }}</span> <button class='task-completed-button' ng-click="home.taskCompleted(task)" >Mark As Completed</button><br> Priority: {{ task.priority }} <br> Expires: {{ task.expires }}
+            <span style="font-size:30px;">{{ task.description }}</span> <button class='task-completed-button' ng-click="home.taskStatus(task)" >Mark As Completed</button><br> Priority: {{ task.priority }} <br> Expires: {{ task.expires }}
         </div>
     </div>
 </div>
